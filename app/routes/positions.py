@@ -19,7 +19,7 @@ def add_position():
         if password == PASS_SYS_ADM:
             with Session() as session:
                 position = Position(name=name)
-                session.add(Session)
+                session.add(position)
                 session.commit()
                 msg = "Ваша посада додана"
         else:
