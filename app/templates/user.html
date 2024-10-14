@@ -1,0 +1,29 @@
+{% extends "_base.html" %}
+
+{% block center_content %}
+<form action="{{ url_for('users.add_user') }}" method="post">
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Прізвище</label>
+    <input type="text" class="form-control" id="exampleInputEmail1" name="last_name">
+  </div>
+    <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Ім'я</label>
+    <input type="text" class="form-control" id="exampleInputEmail1" name="first_name">
+  </div>
+  <select name="position_id" class="form-control">
+    {% for position in positions %}
+        <option value="{{ position.id }}">{{ position.name }}</option>
+    {% endfor %}
+  </select>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Пароль адміністратора</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" name="password">
+  </div>
+  <button type="submit" class="btn btn-primary">Додати</button>
+  <h3>{{ msg }}</h3>
+</form>
+
+{% if block %}
+    <img src="https://http.cat/401">
+{% endif %}
+{% endblock center_content %}

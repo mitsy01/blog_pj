@@ -10,6 +10,6 @@ class User(Base):
     id: Mapped[int] = mapped_column(primary_key=True)
     first_name: Mapped[str] = mapped_column(String(50))
     last_name: Mapped[str] = mapped_column(String(50))
-    position_id: Mapped[int] = mapped_column(ForeignKey(Position_id))
+    position_id: Mapped[int] = mapped_column(ForeignKey(Position.id))
     position: Mapped[Position] = relationship()
     

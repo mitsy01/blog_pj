@@ -1,0 +1,12 @@
+{% extends "_base.html" %}
+
+{% block content %}
+
+    <div class="card-body">
+        <h5 class="card-title">{{ post.title }}</h5>
+        <p class="card-text">{{ post.text }}</p>
+        <a href="{{ url_for('posts.edit_post', id=post.id) }}" class="btn btn-info">Редагувати статтю</a>
+        <a href="{{ url_for('posts.del_post', id=post.id) }}" class="btn btn-danger">Видалити статтю</a>
+    </div>
+
+{% endblock content %}
